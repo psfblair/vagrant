@@ -174,8 +174,8 @@ module VagrantPlugins
             # A JSON or YAML file is referenced.
             config.extra_vars
           else
-            # Expected to be a Hash after config validation.
-            config.extra_vars.to_json
+            # Expected to be a Hash after config validation. Must be single-quoted.
+            "'#{config.extra_vars.to_json}'"
           end
         end
 
